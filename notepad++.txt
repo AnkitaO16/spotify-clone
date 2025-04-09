@@ -1,0 +1,98 @@
+Test Register API
+Method: POST
+URL: http://localhost:5000/api/auth/register
+Body: (select raw + JSON)
+
+json
+Copy
+Edit
+{
+  "name": "Ankita Ojha",
+  "email": "ankita@example.com",
+  "password": "secure123"
+}
+✅ Expected Response:
+
+json
+Copy
+Edit
+{
+  "message": "User created",
+  "user": {
+    "id": "...",
+    "name": "Ankita Ojha",
+    "email": "ankita@example.com"
+  }
+}
+🔐 4. Test Login API
+Method: POST
+URL: http://localhost:5000/api/auth/login
+Body:
+
+json
+Copy
+Edit
+{
+  "email": "ankita@example.com",
+  "password": "secure123"
+}
+✅ Expected Response:
+
+json
+Copy
+Edit
+{
+  "message": "Login successful",
+  "token": "eyJhbGciOiJIUzI1NiIsInR...",
+  "user": {
+    "id": "...",
+    "name": "Ankita Ojha",
+    "email": "ankita@example.com"
+  }
+}
+
+
+
+
+
+✅ Test in Postman
+GET http://localhost:5000/api/profile
+
+
+
+
+
+
+➕ Create Playlist
+POST http://localhost:5000/api/playlists
+Headers: Authorization: Bearer <token>
+Body:
+
+json
+Copy
+Edit
+{ "title": "My Gym Beats" }
+📄 Get All Playlists
+GET http://localhost:5000/api/playlists
+Headers: Authorization: Bearer <token>
+
+
+
+
+🧪 Postman Test
+🎵 Add Song
+POST http://localhost:5000/api/songs
+Headers: Authorization: Bearer <token>
+Body:
+
+json
+Copy
+Edit
+{
+  "playlist_id": "<your_playlist_id>",
+  "title": "Power Anthem",
+  "artist": "ANKITA Beats",
+  "audio_url": "http://localhost:5000/audio/sample.mp3"
+}
+📂 Get Songs in Playlist
+GET http://localhost:5000/api/songs/<playlist_id>/songs
