@@ -233,3 +233,27 @@ Audio streaming support
 Native file/audio player
 
 Reuse backend APIs!
+
+
+# ========================mobile===============================================
+spotify-clone-mobile/
+├── assets/
+│   └── images/
+├── src/
+│   ├── components/
+│   ├── screens/
+│   │   ├── LoginScreen.js
+│   │   ├── RegisterScreen.js
+│   │   └── HomeScreen.js
+│   ├── navigation/
+│   │   └── AppNavigator.js
+│   ├── constants/
+│   └── App.js
+├── app.json
+├── package.json
+└── ...
+# Stop Metro bundler (Ctrl + C) and restart
+npx react-native start --reset-cache
+# In another terminal/tab, run the app again
+npx react-native run-android   # for Android
+npx react-native run-ios       # for iOS
